@@ -1,6 +1,7 @@
 import requests
+import os
 
-PUBMED_API_KEY = "9a625f30528e83bd14b7f888e068ab5c1d08"
+PUBMED_API_KEY = os.environ.get("PUBMED_API_KEY", "")
 ESEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 ESUMMARY_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
 

@@ -61,7 +61,7 @@ export default function Integrations() {
                 key={provider.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`bg-card p-6 rounded-2xl border transition-all ${isConnected ? 'border-blue-200 shadow-md shadow-blue-100/50' : 'border-border shadow-sm'}`}
+                className={`bg-card p-6 rounded-2xl border transition-all ${isConnected ? 'border-primary/20 shadow-md ring-1 ring-primary/10' : 'border-border shadow-sm'}`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm ${provider.color}`}>
@@ -104,11 +104,11 @@ export default function Integrations() {
           })}
         </div>
 
-        <div className="mt-12 bg-blue-50 border border-blue-100 rounded-2xl p-6 flex items-start gap-4">
+        <div className="mt-12 bg-primary/5 border border-primary/20 rounded-2xl p-6 flex items-start gap-4">
           <AlertCircle className="h-6 w-6 text-primary shrink-0 mt-0.5" />
           <div>
-            <h4 className="font-bold text-blue-900 mb-1">Data Privacy Guarantee</h4>
-            <p className="text-blue-700/80 text-sm leading-relaxed">
+            <h4 className="font-bold text-foreground mb-1">Data Privacy Guarantee</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">
               We only sync the metrics necessary for your dashboard. Your health data is encrypted end-to-end and never sold to third parties. You can revoke access at any time.
             </p>
           </div>

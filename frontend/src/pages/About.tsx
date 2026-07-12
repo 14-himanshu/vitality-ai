@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white font-sans pt-24 pb-12">
+    <div className="min-h-screen bg-background font-sans pt-24 pb-12">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           
@@ -26,7 +26,7 @@ function About() {
             
             <div className="flex gap-4 pt-4">
               <Link to="/signup">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 px-8 rounded-xl shadow-lg shadow-indigo-600/30">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 px-8 rounded-xl shadow-sm">
                   Start Your Journey
                 </Button>
               </Link>
@@ -34,7 +34,7 @@ function About() {
           </div>
 
           <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-card p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-border flex flex-col items-start gap-4">
+            <div className="bg-card p-6 rounded-3xl shadow-sm border border-border flex flex-col items-start gap-4">
               <div className="bg-rose-100 p-3 rounded-2xl">
                 <HeartPulse className="h-6 w-6 text-rose-600" />
               </div>
@@ -44,7 +44,7 @@ function About() {
               </p>
             </div>
             
-            <div className="bg-card p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-border flex flex-col items-start gap-4 sm:-mt-6 sm:mb-6">
+            <div className="bg-card p-6 rounded-3xl shadow-sm border border-border flex flex-col items-start gap-4 sm:-mt-6 sm:mb-6">
               <div className="bg-purple-100 p-3 rounded-2xl">
                 <BrainCircuit className="h-6 w-6 text-purple-600" />
               </div>
@@ -54,7 +54,7 @@ function About() {
               </p>
             </div>
 
-            <div className="bg-card p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-border flex flex-col items-start gap-4">
+            <div className="bg-card p-6 rounded-3xl shadow-sm border border-border flex flex-col items-start gap-4">
               <div className="bg-emerald-100 p-3 rounded-2xl">
                 <Zap className="h-6 w-6 text-emerald-600" />
               </div>
@@ -64,7 +64,7 @@ function About() {
               </p>
             </div>
 
-            <div className="bg-card p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-border flex flex-col items-start gap-4 sm:-mt-6 sm:mb-6">
+            <div className="bg-card p-6 rounded-3xl shadow-sm border border-border flex flex-col items-start gap-4 sm:-mt-6 sm:mb-6">
               <div className="bg-blue-100 p-3 rounded-2xl">
                 <Shield className="h-6 w-6 text-primary" />
               </div>

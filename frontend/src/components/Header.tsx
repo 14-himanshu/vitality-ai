@@ -46,16 +46,16 @@ function Navbar() {
           <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
             <Activity className="h-6 w-6 text-primary" />
           </div>
-          <span className="text-2xl font-black tracking-tight text-foreground">
+          <span className="text-2xl font-bold tracking-tight text-foreground">
             Vitality<span className="text-primary">.io</span>
           </span>
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</Link>
-          <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</Link>
-          {user && <Link to="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Dashboard</Link>}
-          <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</Link>
+          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Home</Link>
+          <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">About</Link>
+          {user && <Link to="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Dashboard</Link>}
+          <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
         </div>
         
         <div className="hidden md:flex items-center gap-4">
@@ -88,12 +88,12 @@ function Navbar() {
           {!user ? (
             <div className="flex items-center gap-3 border-l border-border pl-4">
               <Link to="/login">
-                <Button variant="ghost" className="font-semibold text-foreground hover:bg-muted/50 rounded-xl">
+                <Button variant="ghost" className="font-medium text-foreground hover:bg-muted/50 rounded-lg">
                   Sign In
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="font-semibold rounded-xl bg-gradient-to-r from-primary to-blue-500 hover:opacity-90 transition-opacity shadow-lg shadow-primary/25">
+                <Button className="font-medium rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm">
                   Get Started
                 </Button>
               </Link>
@@ -152,11 +152,11 @@ function Navbar() {
               <hr className="border-border my-2" />
               {!user ? (
                 <div className="flex flex-col gap-3">
-                  <Button variant="outline" className="w-full h-12 rounded-xl text-lg" onClick={() => { setIsOpen(false); navigate('/login'); }}>Log in</Button>
-                  <Button className="w-full h-12 rounded-xl text-lg bg-gradient-to-r from-primary to-blue-500 shadow-lg" onClick={() => { setIsOpen(false); navigate('/signup'); }}>Start Free Trial</Button>
+                  <Button variant="outline" className="w-full h-12 rounded-lg text-lg font-medium" onClick={() => { setIsOpen(false); navigate('/login'); }}>Log in</Button>
+                  <Button className="w-full h-12 rounded-lg text-lg font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm" onClick={() => { setIsOpen(false); navigate('/signup'); }}>Start Free Trial</Button>
                 </div>
               ) : (
-                <Button variant="outline" className="w-full h-12 rounded-xl text-lg" onClick={() => { setIsOpen(false); handleLogout(); }}>Sign Out</Button>
+                <Button variant="outline" className="w-full h-12 rounded-lg text-lg font-medium" onClick={() => { setIsOpen(false); handleLogout(); }}>Sign Out</Button>
               )}
             </div>
           </motion.div>

@@ -43,7 +43,7 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-muted/20 to-background font-sans pt-24 pb-12">
+    <div className="min-h-screen bg-background font-sans pt-24 pb-12">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
@@ -56,7 +56,7 @@ function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-border shadow-lg">
+          <Card className="border-border shadow-sm">
             <CardHeader className="bg-muted/50 rounded-t-lg">
               <CardTitle className="text-2xl text-primary">
                 Submit a Support Ticket
@@ -123,7 +123,7 @@ function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="border-border shadow-lg">
+            <Card className="border-border shadow-sm">
               <CardHeader className="bg-muted/50 rounded-t-lg">
                 <CardTitle className="text-2xl text-primary">
                   Get in Touch
@@ -162,7 +162,7 @@ function Contact() {
               </CardContent>
             </Card>
 
-            <Card className="border-border shadow-lg">
+            <Card className="border-border shadow-sm">
               <CardHeader className="bg-muted/50 rounded-t-lg">
                 <CardTitle className="text-2xl text-primary">Office Hours</CardTitle>
               </CardHeader>

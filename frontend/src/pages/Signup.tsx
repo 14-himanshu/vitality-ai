@@ -86,11 +86,8 @@ function SignUp() {
     <div className="min-h-screen relative bg-background overflow-hidden font-sans pt-20 pb-12 flex flex-col items-center">
       
       {/* BACKGROUND EFFECTS */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-100/50 rounded-full blur-[100px] opacity-70"></div>
-        <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-cyan-100/40 rounded-full blur-[100px] opacity-60"></div>
-        <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-emerald-100/30 rounded-full blur-[120px] opacity-60"></div>
+      <div className="absolute inset-0 z-0 bg-slate-50/50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center">
@@ -105,7 +102,7 @@ function SignUp() {
           <div className="inline-flex items-center justify-center p-3 bg-card rounded-2xl shadow-sm border border-border mb-6">
             <Activity className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
             Join the Health Revolution.
           </h1>
           <p className="text-lg text-slate-600">
@@ -150,10 +147,9 @@ function SignUp() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full max-w-[480px] bg-card/70 backdrop-blur-xl rounded-[2rem] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 ring-1 ring-primary/10 relative overflow-hidden"
+          className="w-full max-w-[440px] bg-card rounded-2xl p-8 sm:p-10 shadow-sm border border-border relative overflow-hidden"
         >
-          {/* Subtle glow behind card */}
-          <div className="absolute -inset-0.5 bg-gradient-to-b from-emerald-500/10 to-blue-500/10 rounded-[2rem] blur opacity-50 -z-10"></div>
+
 
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-foreground mb-2">Create Account</h2>
