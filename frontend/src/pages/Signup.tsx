@@ -102,7 +102,7 @@ function SignUp() {
           <div className="inline-flex items-center justify-center p-3 bg-card rounded-2xl shadow-sm border border-border mb-6">
             <Activity className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+          <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-4">
             Join the Health Revolution.
           </h1>
           <p className="text-lg text-slate-600">
@@ -122,7 +122,7 @@ function SignUp() {
               <HeartPulse className="h-5 w-5 text-red-500" />
             </div>
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mb-1">Heart Rate</p>
-            <p className="text-xl font-bold text-foreground">72 <span className="text-sm font-medium text-muted-foreground">BPM</span></p>
+            <p className="text-xl font-medium text-foreground">72 <span className="text-sm font-medium text-muted-foreground">BPM</span></p>
           </div>
 
           <div className="bg-card/80 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-border w-40 flex flex-col items-center">
@@ -130,7 +130,7 @@ function SignUp() {
               <Scale className="h-5 w-5 text-emerald-500" />
             </div>
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mb-1">BMI</p>
-            <p className="text-xl font-bold text-foreground">22.1 <span className="text-sm font-medium text-emerald-600">Healthy</span></p>
+            <p className="text-xl font-medium text-foreground">22.1 <span className="text-sm font-medium text-emerald-600">Healthy</span></p>
           </div>
 
           <div className="bg-card/80 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-border w-40 flex flex-col items-center">
@@ -138,7 +138,7 @@ function SignUp() {
               <Flame className="h-5 w-5 text-orange-500" />
             </div>
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mb-1">Calories</p>
-            <p className="text-xl font-bold text-foreground">1,850 <span className="text-sm font-medium text-muted-foreground">kcal</span></p>
+            <p className="text-xl font-medium text-foreground">1,850 <span className="text-sm font-medium text-muted-foreground">kcal</span></p>
           </div>
         </motion.div>
 
@@ -152,7 +152,7 @@ function SignUp() {
 
 
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-foreground mb-2">Create Account</h2>
+            <h2 className="text-2xl font-medium text-foreground mb-2">Create Account</h2>
             
             {/* Animated Progress Indicator */}
             <div className="flex items-center justify-center gap-3 mt-4">
@@ -228,7 +228,7 @@ function SignUp() {
                     <Button 
                       type="button" 
                       onClick={nextStep}
-                      className="w-full h-12 rounded-xl text-base font-bold shadow-sm bg-primary hover:bg-primary/90 text-primary-foreground transition-all mt-4"
+                      className="w-full h-12 rounded-xl text-base font-medium shadow-sm bg-primary hover:bg-primary/90 text-primary-foreground transition-all mt-4"
                     >
                       Continue <ChevronRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -306,7 +306,7 @@ function SignUp() {
                       <Button 
                         type="submit" 
                         disabled={isLoading}
-                        className="flex-1 h-12 rounded-xl text-base font-bold shadow-sm bg-primary hover:bg-primary/90 text-primary-foreground transition-all"
+                        className="flex-1 h-12 rounded-xl text-base font-medium shadow-sm bg-primary hover:bg-primary/90 text-primary-foreground transition-all"
                       >
                         {isLoading ? (
                           <Loader2 className="mr-2 h-5 w-5 animate-spin" />
@@ -354,7 +354,7 @@ function SignUp() {
 
           <div className="mt-8 text-center text-sm font-medium text-muted-foreground">
             Already have an account?{" "}
-            <Link to="/login" className="text-primary font-bold hover:underline">
+            <Link to="/login" className="text-primary font-medium hover:underline">
               Sign in &rarr;
             </Link>
           </div>

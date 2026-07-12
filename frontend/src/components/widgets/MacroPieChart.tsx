@@ -43,8 +43,8 @@ export default function MacroPieChart({ latest, goals }: { latest: Metric, goals
           </PieChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span className="text-2xl font-black text-foreground">{total}g</span>
-          <span className="text-[10px] text-muted-foreground font-bold uppercase">Macros</span>
+          <span className="text-2xl font-bold text-foreground">{total}g</span>
+          <span className="text-[10px] text-muted-foreground font-medium uppercase">Macros</span>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export default function MacroPieChart({ latest, goals }: { latest: Metric, goals
               <div className="w-2.5 h-2.5 rounded-full shadow-sm" style={{ backgroundColor: item.color }}></div>
               <span className="font-semibold text-slate-600">{item.name}</span>
             </div>
-            <span className="font-bold text-foreground">
+            <span className="font-medium text-foreground">
               {item.value}g <span className="text-[10px] text-muted-foreground font-normal">/ {item.name === 'Protein' ? GOAL_P : item.name === 'Carbs' ? GOAL_C : GOAL_F}g</span>
             </span>
           </div>

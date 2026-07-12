@@ -69,7 +69,7 @@ export default function Dashboard() {
       <div className="bg-card text-foreground pt-24 pb-12 px-6 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
-            <h1 className="text-3xl font-bold mb-2">Welcome back, {user?.name || 'User'}!</h1>
+            <h1 className="text-3xl font-medium mb-2">Welcome back, {user?.name || 'User'}!</h1>
             <p className="text-muted-foreground">Here's your health overview for today.</p>
           </div>
           
@@ -115,7 +115,7 @@ export default function Dashboard() {
               <div className="flex justify-between items-start mb-4">
                 <div className="bg-background p-2 rounded-xl">{stat.icon}</div>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-1">{stat.value}</h3>
+              <h3 className="text-2xl font-medium text-foreground mb-1">{stat.value}</h3>
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{stat.label}</p>
               <p className="text-[11px] text-muted-foreground mt-2 font-medium">{stat.trend}</p>
             </div>
@@ -142,10 +142,10 @@ export default function Dashboard() {
                 whileDrag={{ scale: 1.02, zIndex: 50 }}
               >
                 <div className={`p-5 flex justify-between items-center border-b ${isEditing ? 'border-primary/20 bg-primary/5 rounded-t-2xl' : 'border-border'}`}>
-                  <h3 className="font-bold text-foreground">{widget.title}</h3>
+                  <h3 className="font-medium text-foreground">{widget.title}</h3>
                   {isEditing && (
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 rounded-full">Drag to Move</span>
+                      <span className="text-[10px] font-medium uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 rounded-full">Drag to Move</span>
                     </div>
                   )}
                 </div>
@@ -164,7 +164,7 @@ export default function Dashboard() {
           <div className="bg-card p-3 rounded-full shadow-sm mb-3 group-hover:scale-110 transition-transform">
              <PlusCircle className="h-8 w-8 text-primary" />
           </div>
-          <span className="font-bold text-lg">Log Today's Data</span>
+          <span className="font-medium text-lg">Log Today's Data</span>
           <p className="text-sm text-muted-foreground mt-1">Keep your streak alive by adding new metrics</p>
         </div>
 

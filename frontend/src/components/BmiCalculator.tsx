@@ -85,7 +85,7 @@ function BmiCalculator() {
           >
             <Activity className="h-8 w-8 text-primary-foreground" />
           </motion.div>
-          <CardTitle className="text-3xl font-extrabold tracking-tight">Health Calculator</CardTitle>
+          <CardTitle className="text-3xl font-semibold tracking-tight">Health Calculator</CardTitle>
           <CardDescription className="text-base mt-2 text-muted-foreground/80 font-medium">Discover your body mass index and health category</CardDescription>
         </CardHeader>
 
@@ -100,7 +100,7 @@ function BmiCalculator() {
                   <span>Weight</span>
                 </Label>
                 <div className="flex items-baseline gap-1">
-                  <span className="font-black text-3xl tracking-tighter text-primary">{weight}</span>
+                  <span className="font-bold text-3xl tracking-tighter text-primary">{weight}</span>
                   <span className="text-muted-foreground font-medium">kg</span>
                 </div>
               </div>
@@ -126,7 +126,7 @@ function BmiCalculator() {
                   <span>Height</span>
                 </Label>
                 <div className="flex items-baseline gap-1">
-                  <span className="font-black text-3xl tracking-tighter text-primary">{height}</span>
+                  <span className="font-bold text-3xl tracking-tighter text-primary">{height}</span>
                   <span className="text-muted-foreground font-medium">cm</span>
                 </div>
               </div>
@@ -150,7 +150,7 @@ function BmiCalculator() {
             <Button 
               onClick={calculateBMI} 
               disabled={isCalculating}
-              className="flex-1 font-bold text-lg h-14 rounded-xl shadow-lg shadow-primary/25 bg-gradient-to-r from-primary to-blue-600 hover:opacity-90 transition-opacity"
+              className="flex-1 font-medium text-lg h-14 rounded-xl shadow-lg shadow-primary/25 bg-gradient-to-r from-primary to-blue-600 hover:opacity-90 transition-opacity"
             >
               {isCalculating ? <RefreshCw className="animate-spin h-5 w-5 mr-2" /> : <Calculator className="h-5 w-5 mr-2" />}
               {isCalculating ? "Analyzing..." : "Calculate My BMI"}
@@ -175,24 +175,24 @@ function BmiCalculator() {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-green-500 to-red-500 opacity-20"></div>
 
                   <div className="text-center space-y-4 relative z-10">
-                    <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest flex items-center justify-center gap-2">
+                    <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest flex items-center justify-center gap-2">
                       <HeartPulse className="h-4 w-4" /> Result Analysis
                     </p>
                     
                     <div className="flex items-center justify-center py-2">
-                      <span className={`text-7xl font-black tracking-tighter ${getBMIColorClass(bmi)} drop-shadow-md`}>
+                      <span className={`text-7xl font-bold tracking-tighter ${getBMIColorClass(bmi)} drop-shadow-md`}>
                         {bmi}
                       </span>
                     </div>
 
                     <div className="flex flex-col gap-3">
-                      <div className={`inline-flex items-center justify-center mx-auto px-4 py-1.5 rounded-full text-sm font-bold bg-muted/50 border ${getBMIColorClass(bmi)}`}>
+                      <div className={`inline-flex items-center justify-center mx-auto px-4 py-1.5 rounded-full text-sm font-medium bg-muted/50 border ${getBMIColorClass(bmi)}`}>
                         Category: {category}
                       </div>
                       
                       <div className="w-full max-w-sm mx-auto mt-4">
                         <Progress value={getProgressValue(bmi)} className="h-4 rounded-full bg-secondary shadow-inner" />
-                        <div className="flex justify-between mt-2 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                        <div className="flex justify-between mt-2 text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
                           <span>15</span>
                           <span>25</span>
                           <span>40</span>
@@ -204,11 +204,11 @@ function BmiCalculator() {
                   <div className="mt-8 grid grid-cols-2 gap-4">
                     <div className="bg-muted/30 p-4 rounded-xl border border-border/50 text-center">
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Ideal Weight</p>
-                      <p className="text-lg font-bold text-foreground">{getHealthyRange()}</p>
+                      <p className="text-lg font-medium text-foreground">{getHealthyRange()}</p>
                     </div>
                     <div className="bg-muted/30 p-4 rounded-xl border border-border/50 text-center">
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Status</p>
-                      <p className={`text-lg font-bold ${getBMIColorClass(bmi)}`}>{category}</p>
+                      <p className={`text-lg font-medium ${getBMIColorClass(bmi)}`}>{category}</p>
                     </div>
                   </div>
 

@@ -61,7 +61,7 @@ export default function GoalSettingsModal({ isOpen, onClose, currentGoals, onSav
               <div className="bg-indigo-100 p-2 rounded-xl">
                 <Target className="h-5 w-5 text-indigo-600" />
               </div>
-              <h2 className="text-xl font-bold text-indigo-950">Set Your Goals</h2>
+              <h2 className="text-xl font-medium text-indigo-950">Set Your Goals</h2>
             </div>
             <button onClick={onClose} className="p-2 text-indigo-400 hover:text-indigo-600 transition-colors rounded-full hover:bg-indigo-100/50">
               <X className="h-5 w-5" />
@@ -92,7 +92,7 @@ export default function GoalSettingsModal({ isOpen, onClose, currentGoals, onSav
 
               <div className="grid grid-cols-3 gap-3 pt-2">
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Protein (g)</label>
+                  <label className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider">Protein (g)</label>
                   <input 
                     type="number" required
                     value={formData.daily_protein} onChange={e => setFormData({...formData, daily_protein: e.target.value})}
@@ -100,7 +100,7 @@ export default function GoalSettingsModal({ isOpen, onClose, currentGoals, onSav
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Carbs (g)</label>
+                  <label className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider">Carbs (g)</label>
                   <input 
                     type="number" required
                     value={formData.daily_carbs} onChange={e => setFormData({...formData, daily_carbs: e.target.value})}
@@ -108,7 +108,7 @@ export default function GoalSettingsModal({ isOpen, onClose, currentGoals, onSav
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Fats (g)</label>
+                  <label className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider">Fats (g)</label>
                   <input 
                     type="number" required
                     value={formData.daily_fats} onChange={e => setFormData({...formData, daily_fats: e.target.value})}
@@ -123,7 +123,7 @@ export default function GoalSettingsModal({ isOpen, onClose, currentGoals, onSav
               <button 
                 type="submit" 
                 disabled={isSaving}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-2"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3.5 px-4 rounded-xl shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-2"
               >
                 {isSaving ? (
                   <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

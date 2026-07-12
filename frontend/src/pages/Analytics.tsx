@@ -55,7 +55,7 @@ export default function Analytics() {
               <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="h-5 w-5" />
               </Link>
-              <h1 className="text-3xl font-bold text-foreground flex items-center gap-2">
+              <h1 className="text-3xl font-medium text-foreground flex items-center gap-2">
                 <Activity className="h-6 w-6 text-indigo-400" /> Clinical Analytics
               </h1>
             </div>
@@ -64,7 +64,7 @@ export default function Analytics() {
           
           <Button 
             onClick={exportCSV}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground border-none h-11 px-6 rounded-xl font-bold shadow-lg shadow-indigo-900/50"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground border-none h-11 px-6 rounded-xl font-medium shadow-lg shadow-indigo-900/50"
           >
             <Download className="h-4 w-4 mr-2" /> Export CSV Data
           </Button>
@@ -77,7 +77,7 @@ export default function Analytics() {
         {metrics.length === 0 ? (
           <div className="text-center py-24 text-muted-foreground">
             <Stethoscope className="h-12 w-12 mx-auto mb-4 opacity-50" />
-            <h2 className="text-xl font-bold text-muted-foreground">No Clinical Data Found</h2>
+            <h2 className="text-xl font-medium text-muted-foreground">No Clinical Data Found</h2>
             <p className="mt-2">Log your daily metrics with the 'Advanced Clinical' toggle to see your charts.</p>
           </div>
         ) : (
@@ -90,15 +90,15 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <BrainCircuit className="h-5 w-5 text-purple-400" /> Predictive Weight Trajectory
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Linear regression AI model predicting your next 30 days based on recent habits.</p>
                 </div>
                 {forecast && forecast.ratePerDay !== undefined && (
                   <div className="bg-secondary px-4 py-2 rounded-xl text-right border border-border">
-                    <p className="text-xs font-bold text-purple-400 uppercase">Predicted Trend</p>
-                    <p className="text-lg font-black text-purple-300">
+                    <p className="text-xs font-medium text-purple-400 uppercase">Predicted Trend</p>
+                    <p className="text-lg font-bold text-purple-300">
                       {forecast.ratePerDay > 0 ? '+' : ''}{(forecast.ratePerDay * 7).toFixed(2)} kg / week
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <HeartPulse className="h-5 w-5 text-indigo-400" /> Heart Rate Variability
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Measured in ms (Higher is generally better recovery)</p>
@@ -163,7 +163,7 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <Activity className="h-5 w-5 text-rose-400" /> Resting Heart Rate
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Measured in bpm (Lower indicates better cardiovascular fitness)</p>
@@ -198,7 +198,7 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <Droplet className="h-5 w-5 text-teal-400" /> Fasting Blood Glucose
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Measured in mg/dL</p>

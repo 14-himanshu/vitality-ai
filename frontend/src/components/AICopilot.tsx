@@ -120,7 +120,7 @@ export default function AICopilot() {
                   <Activity className="h-4 w-4" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm">Vitality Agent</h3>
+                  <h3 className="font-medium text-sm">Vitality Agent</h3>
                   <p className="text-[10px] text-blue-100 font-medium">Action-taking Assistant</p>
                 </div>
               </div>
@@ -162,19 +162,19 @@ export default function AICopilot() {
                     )}
                     
                     {msg.actionType === 'EMERGENCY_TRIAGE' && (
-                      <div className="flex items-center gap-2 font-bold text-red-700 mb-1 border-b border-red-200 pb-2">
+                      <div className="flex items-center gap-2 font-medium text-red-700 mb-1 border-b border-red-200 pb-2">
                         <AlertTriangle className="h-5 w-5 animate-pulse" />
                         Medical Alert
                       </div>
                     )}
                     {msg.actionType === 'LOG_METRIC' && (
-                      <div className="flex items-center gap-2 font-bold text-emerald-700 mb-1 border-b border-emerald-200 pb-2">
+                      <div className="flex items-center gap-2 font-medium text-emerald-700 mb-1 border-b border-emerald-200 pb-2">
                         <CheckCircle className="h-5 w-5" />
                         Nutrition Logged
                       </div>
                     )}
                     {msg.actionType === 'FACT_CHECK' && (
-                      <div className="flex items-center gap-2 font-bold text-indigo-700 mb-1 border-b border-indigo-200 pb-2">
+                      <div className="flex items-center gap-2 font-medium text-indigo-700 mb-1 border-b border-indigo-200 pb-2">
                         <BookOpen className="h-5 w-5" />
                         Verified Source
                       </div>
