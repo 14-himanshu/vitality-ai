@@ -1,6 +1,11 @@
 # pyrefly: ignore [missing-import]
 from fastapi import FastAPI, File, UploadFile, Form
 # pyrefly: ignore [missing-import]
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 # pyrefly: ignore [missing-import]
 from fastapi.responses import JSONResponse

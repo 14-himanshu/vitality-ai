@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:frontend": "vite",
-    "dev:backend": "tsx backend/server.ts",
+    "dev:frontend": "vite --port 5173",
+    "dev:backend": "npm run dev --prefix ../backend",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "build": "vite build",
     "lint": "eslint .",

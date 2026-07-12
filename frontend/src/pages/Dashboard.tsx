@@ -69,14 +69,14 @@ export default function Dashboard() {
       <div className="bg-card text-foreground pt-24 pb-12 px-6 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
-            <h1 className="text-3xl font-bold mb-2">Welcome back, {user?.name || 'User'}!</h1>
+            <h1 className="text-3xl font-medium mb-2">Welcome back, {user?.name || 'User'}!</h1>
             <p className="text-muted-foreground">Here's your health overview for today.</p>
           </div>
           
           <div className="flex items-center gap-3">
             <Button 
               variant="outline" 
-              className="h-10 bg-secondary border-border text-foreground hover:bg-slate-700 hover:text-foreground font-semibold gap-2"
+              className="h-10 bg-secondary border-border text-foreground hover:bg-secondary/80 font-semibold gap-2"
               onClick={() => setIsGoalModalOpen(true)}
             >
               <Target className="h-4 w-4" /> Goals
@@ -87,7 +87,7 @@ export default function Dashboard() {
               className={`h-10 font-semibold gap-2 transition-colors ${
                 isEditing 
                 ? 'bg-primary hover:bg-primary/90 text-primary-foreground border-primary' 
-                : 'bg-secondary border-border text-foreground hover:bg-slate-700 hover:text-foreground'
+                : 'bg-secondary border-border text-foreground hover:bg-secondary/80'
               }`}
             >
               {isEditing ? (
@@ -115,7 +115,7 @@ export default function Dashboard() {
               <div className="flex justify-between items-start mb-4">
                 <div className="bg-background p-2 rounded-xl">{stat.icon}</div>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-1">{stat.value}</h3>
+              <h3 className="text-2xl font-medium text-foreground mb-1">{stat.value}</h3>
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{stat.label}</p>
               <p className="text-[11px] text-muted-foreground mt-2 font-medium">{stat.trend}</p>
             </div>
@@ -134,18 +134,18 @@ export default function Dashboard() {
                 key={widget.id} 
                 value={widget} 
                 drag={isEditing}
-                className={`bg-card rounded-3xl shadow-sm border ${
+                className={`bg-card rounded-2xl shadow-sm border ${
                   isEditing 
-                  ? 'border-blue-400 border-dashed shadow-md ring-4 ring-primary/10 cursor-grab active:cursor-grabbing origin-center' 
+                  ? 'border-primary border-dashed shadow-md cursor-grab active:cursor-grabbing origin-center' 
                   : 'border-border'
                 } ${widget.colSpan === 3 ? 'md:col-span-3' : 'md:col-span-1'}`}
                 whileDrag={{ scale: 1.02, zIndex: 50 }}
               >
-                <div className={`p-5 flex justify-between items-center border-b ${isEditing ? 'border-blue-100 bg-blue-50/50 rounded-t-3xl' : 'border-border'}`}>
-                  <h3 className="font-bold text-foreground">{widget.title}</h3>
+                <div className={`p-5 flex justify-between items-center border-b ${isEditing ? 'border-primary/20 bg-primary/5 rounded-t-2xl' : 'border-border'}`}>
+                  <h3 className="font-medium text-foreground">{widget.title}</h3>
                   {isEditing && (
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary bg-blue-100 px-2 py-1 rounded-full">Drag to Move</span>
+                      <span className="text-[10px] font-medium uppercase tracking-widest text-primary bg-primary/10 px-2 py-1 rounded-full">Drag to Move</span>
                     </div>
                   )}
                 </div>
@@ -159,12 +159,12 @@ export default function Dashboard() {
         {/* Log Metrics Button (Always visible now to provide functionality) */}
         <div 
           onClick={() => setIsLogModalOpen(true)}
-          className="mt-6 border-2 border-dashed border-border rounded-3xl p-8 flex flex-col items-center justify-center text-muted-foreground hover:bg-muted hover:border-blue-400 hover:text-primary transition-colors cursor-pointer bg-background/50 group"
+          className="mt-6 border-2 border-dashed border-border rounded-2xl p-8 flex flex-col items-center justify-center text-muted-foreground hover:bg-muted/50 hover:border-primary/50 hover:text-primary transition-colors cursor-pointer bg-card group shadow-sm"
         >
           <div className="bg-card p-3 rounded-full shadow-sm mb-3 group-hover:scale-110 transition-transform">
              <PlusCircle className="h-8 w-8 text-primary" />
           </div>
-          <span className="font-bold text-lg">Log Today's Data</span>
+          <span className="font-medium text-lg">Log Today's Data</span>
           <p className="text-sm text-muted-foreground mt-1">Keep your streak alive by adding new metrics</p>
         </div>
 

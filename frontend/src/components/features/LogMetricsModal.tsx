@@ -67,7 +67,7 @@ export default function LogMetricsModal({ isOpen, onClose, onSave }) {
             <div className="bg-blue-100 p-2 rounded-xl">
               <Activity className="h-5 w-5 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground">Log Today's Data</h2>
+            <h2 className="text-2xl font-medium text-foreground">Log Today's Data</h2>
           </div>
           <p className="text-muted-foreground text-sm">Keep your streak alive by logging your daily health metrics.</p>
         </div>
@@ -152,7 +152,7 @@ export default function LogMetricsModal({ isOpen, onClose, onSave }) {
             </div>
           </div>
 
-          <Button type="submit" disabled={isSubmitting} className="w-full h-12 rounded-xl text-base font-bold bg-primary hover:bg-primary/90 text-primary-foreground gap-2 mt-4">
+          <Button type="submit" disabled={isSubmitting} className="w-full h-12 rounded-xl text-base font-medium bg-primary hover:bg-primary/90 text-primary-foreground gap-2 mt-4">
             {isSubmitting ? 'Saving...' : <><Check className="h-5 w-5" /> Save Today's Log</>}
           </Button>
         </form>

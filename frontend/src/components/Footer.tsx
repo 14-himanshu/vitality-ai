@@ -15,7 +15,7 @@ function Footer() {
               <div className="bg-primary/10 p-2 rounded-xl">
                 <Activity className="h-6 w-6 text-primary" />
               </div>
-              <span className="text-2xl font-black tracking-tight text-foreground">
+              <span className="text-2xl font-medium tracking-tight text-foreground">
                 Vitality<span className="text-primary">.io</span>
               </span>
             </Link>

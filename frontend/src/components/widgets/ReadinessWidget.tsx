@@ -56,22 +56,22 @@ export default function ReadinessWidget({ latest, metrics }: { latest: Metric, m
           <Icon className="h-8 w-8" />
         </div>
         <div className="text-right">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground">Score</span>
-          <div className={`text-4xl font-black ${color}`}>{score}</div>
+          <span className="text-[10px] uppercase font-medium tracking-widest text-muted-foreground">Score</span>
+          <div className={`text-4xl font-bold ${color}`}>{score}</div>
         </div>
       </div>
       
       <div>
-        <h4 className="font-bold text-foreground text-lg mb-1">{status}</h4>
+        <h4 className="font-medium text-foreground text-lg mb-1">{status}</h4>
         <p className="text-xs text-muted-foreground font-medium leading-relaxed">{advice}</p>
       </div>
 
       <div className="mt-4 pt-4 border-t border-border flex justify-between text-xs">
         <div>
-          <span className="text-muted-foreground">HRV:</span> <span className="font-bold text-foreground">{latest.hrv}ms</span>
+          <span className="text-muted-foreground">HRV:</span> <span className="font-medium text-foreground">{latest.hrv}ms</span>
         </div>
         <div>
-          <span className="text-muted-foreground">RHR:</span> <span className="font-bold text-foreground">{latest.resting_heart_rate}bpm</span>
+          <span className="text-muted-foreground">RHR:</span> <span className="font-medium text-foreground">{latest.resting_heart_rate}bpm</span>
         </div>
       </div>
     </div>

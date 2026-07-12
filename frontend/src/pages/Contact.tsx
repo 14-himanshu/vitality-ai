@@ -43,10 +43,10 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-muted/20 to-background font-sans pt-24 pb-12">
+    <div className="min-h-screen bg-background font-sans pt-24 pb-12">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-4">
             <span className="text-primary">Support</span> & Contact
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-border shadow-lg">
+          <Card className="border-border shadow-sm">
             <CardHeader className="bg-muted/50 rounded-t-lg">
               <CardTitle className="text-2xl text-primary">
                 Submit a Support Ticket
@@ -123,7 +123,7 @@ function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="border-border shadow-lg">
+            <Card className="border-border shadow-sm">
               <CardHeader className="bg-muted/50 rounded-t-lg">
                 <CardTitle className="text-2xl text-primary">
                   Get in Touch
@@ -162,7 +162,7 @@ function Contact() {
               </CardContent>
             </Card>
 
-            <Card className="border-border shadow-lg">
+            <Card className="border-border shadow-sm">
               <CardHeader className="bg-muted/50 rounded-t-lg">
                 <CardTitle className="text-2xl text-primary">Office Hours</CardTitle>
               </CardHeader>
@@ -195,7 +195,7 @@ function Contact() {
       {/* Toast Notification */}
       {showToast && (
         <div className="fixed bottom-5 right-5 bg-green-500 text-foreground py-3 px-6 rounded-lg shadow-lg transition-all animate-in slide-in-from-bottom-5 duration-300">
-          <p className="font-bold">Message Sent!</p>
+          <p className="font-medium">Message Sent!</p>
           <p className="text-sm">Thank you for contacting us. We'll get back to you soon.</p>
         </div>
       )}

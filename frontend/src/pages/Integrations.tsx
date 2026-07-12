@@ -47,7 +47,7 @@ export default function Integrations() {
       <div className="max-w-4xl mx-auto px-4">
         
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Connected Devices</h1>
+          <h1 className="text-3xl font-medium text-foreground mb-2">Connected Devices</h1>
           <p className="text-muted-foreground text-lg">Sync your health data automatically from your favorite wearables and apps.</p>
         </div>
 
@@ -61,7 +61,7 @@ export default function Integrations() {
                 key={provider.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`bg-card p-6 rounded-2xl border transition-all ${isConnected ? 'border-blue-200 shadow-md shadow-blue-100/50' : 'border-border shadow-sm'}`}
+                className={`bg-card p-6 rounded-2xl border transition-all ${isConnected ? 'border-primary/20 shadow-md ring-1 ring-primary/10' : 'border-border shadow-sm'}`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm ${provider.color}`}>
@@ -69,18 +69,18 @@ export default function Integrations() {
                   </div>
                   
                   {isConnected ? (
-                    <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-bold border border-emerald-100">
+                    <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium border border-emerald-100">
                       <CheckCircle2 className="h-3.5 w-3.5" />
                       Connected
                     </div>
                   ) : (
-                    <div className="flex items-center gap-1.5 px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-bold border border-border">
+                    <div className="flex items-center gap-1.5 px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-medium border border-border">
                       Not Connected
                     </div>
                   )}
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-2">{provider.name}</h3>
+                <h3 className="text-xl font-medium text-foreground mb-2">{provider.name}</h3>
                 <p className="text-muted-foreground text-sm mb-6 min-h-[40px] leading-relaxed">
                   {provider.description}
                 </p>
@@ -89,7 +89,7 @@ export default function Integrations() {
                   onClick={() => handleConnect(provider.id)}
                   disabled={isConnecting !== null && !connecting}
                   variant={isConnected ? "outline" : "default"}
-                  className={`w-full font-bold h-11 rounded-xl ${isConnected ? 'hover:bg-red-50 hover:text-red-600 hover:border-red-200' : 'bg-primary hover:bg-primary/90 shadow-sm'}`}
+                  className={`w-full font-medium h-11 rounded-xl ${isConnected ? 'hover:bg-red-50 hover:text-red-600 hover:border-red-200' : 'bg-primary hover:bg-primary/90 shadow-sm'}`}
                 >
                   {connecting ? (
                     <><RefreshCw className="h-4 w-4 mr-2 animate-spin" /> Connecting...</>
@@ -104,11 +104,11 @@ export default function Integrations() {
           })}
         </div>
 
-        <div className="mt-12 bg-blue-50 border border-blue-100 rounded-2xl p-6 flex items-start gap-4">
+        <div className="mt-12 bg-primary/5 border border-primary/20 rounded-2xl p-6 flex items-start gap-4">
           <AlertCircle className="h-6 w-6 text-primary shrink-0 mt-0.5" />
           <div>
-            <h4 className="font-bold text-blue-900 mb-1">Data Privacy Guarantee</h4>
-            <p className="text-blue-700/80 text-sm leading-relaxed">
+            <h4 className="font-medium text-foreground mb-1">Data Privacy Guarantee</h4>
+            <p className="text-muted-foreground text-sm leading-relaxed">
               We only sync the metrics necessary for your dashboard. Your health data is encrypted end-to-end and never sold to third parties. You can revoke access at any time.
             </p>
           </div>

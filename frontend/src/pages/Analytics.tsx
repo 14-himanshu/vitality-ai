@@ -45,7 +45,7 @@ export default function Analytics() {
   }
 
   return (
-    <div className="min-h-screen bg-background font-sans text-slate-200 pb-24">
+    <div className="min-h-screen bg-background font-sans text-foreground pb-24">
       
       {/* Header */}
       <div className="border-b border-border bg-card pt-24 pb-8 px-6 sticky top-0 z-20">
@@ -55,7 +55,7 @@ export default function Analytics() {
               <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="h-5 w-5" />
               </Link>
-              <h1 className="text-3xl font-bold text-foreground flex items-center gap-2">
+              <h1 className="text-3xl font-medium text-foreground flex items-center gap-2">
                 <Activity className="h-6 w-6 text-indigo-400" /> Clinical Analytics
               </h1>
             </div>
@@ -64,7 +64,7 @@ export default function Analytics() {
           
           <Button 
             onClick={exportCSV}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground border-none h-11 px-6 rounded-xl font-bold shadow-lg shadow-indigo-900/50"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground border-none h-11 px-6 rounded-xl font-medium shadow-lg shadow-indigo-900/50"
           >
             <Download className="h-4 w-4 mr-2" /> Export CSV Data
           </Button>
@@ -77,7 +77,7 @@ export default function Analytics() {
         {metrics.length === 0 ? (
           <div className="text-center py-24 text-muted-foreground">
             <Stethoscope className="h-12 w-12 mx-auto mb-4 opacity-50" />
-            <h2 className="text-xl font-bold text-muted-foreground">No Clinical Data Found</h2>
+            <h2 className="text-xl font-medium text-muted-foreground">No Clinical Data Found</h2>
             <p className="mt-2">Log your daily metrics with the 'Advanced Clinical' toggle to see your charts.</p>
           </div>
         ) : (
@@ -90,15 +90,15 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <BrainCircuit className="h-5 w-5 text-purple-400" /> Predictive Weight Trajectory
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Linear regression AI model predicting your next 30 days based on recent habits.</p>
                 </div>
                 {forecast && forecast.ratePerDay !== undefined && (
                   <div className="bg-secondary px-4 py-2 rounded-xl text-right border border-border">
-                    <p className="text-xs font-bold text-purple-400 uppercase">Predicted Trend</p>
-                    <p className="text-lg font-black text-purple-300">
+                    <p className="text-xs font-medium text-purple-400 uppercase">Predicted Trend</p>
+                    <p className="text-lg font-bold text-purple-300">
                       {forecast.ratePerDay > 0 ? '+' : ''}{(forecast.ratePerDay * 7).toFixed(2)} kg / week
                     </p>
                   </div>
@@ -107,11 +107,11 @@ export default function Analytics() {
               <div className="h-[350px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={combinedWeightData} margin={{ top: 5, right: 20, bottom: 5, left: -20 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                    <XAxis dataKey="name" stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#475569" fontSize={12} tickLine={false} axisLine={false} domain={['auto', 'auto']} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                    <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} domain={['auto', 'auto']} />
                     <RechartsTooltip 
-                      contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', borderRadius: '12px', color: '#f8fafc' }}
+                      contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '12px', color: '#0f172a', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                     />
                     <Legend />
                     <Line type="monotone" name="Logged Weight" dataKey="actual_weight" stroke="#c084fc" strokeWidth={4} dot={{ r: 4, fill: '#c084fc', strokeWidth: 0 }} activeDot={{ r: 8 }} />
@@ -128,7 +128,7 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <HeartPulse className="h-5 w-5 text-indigo-400" /> Heart Rate Variability
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Measured in ms (Higher is generally better recovery)</p>
@@ -143,11 +143,11 @@ export default function Analytics() {
                         <stop offset="95%" stopColor="#818cf8" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                    <XAxis dataKey="name" stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                    <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
                     <RechartsTooltip 
-                      contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', borderRadius: '12px', color: '#f8fafc' }}
+                      contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '12px', color: '#0f172a', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                       itemStyle={{ color: '#818cf8' }}
                     />
                     <Area type="monotone" dataKey="hrv" stroke="#818cf8" strokeWidth={3} fillOpacity={1} fill="url(#colorHrv)" />
@@ -163,7 +163,7 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <Activity className="h-5 w-5 text-rose-400" /> Resting Heart Rate
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Measured in bpm (Lower indicates better cardiovascular fitness)</p>
@@ -178,11 +178,11 @@ export default function Analytics() {
                         <stop offset="95%" stopColor="#fb7185" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                    <XAxis dataKey="name" stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#475569" fontSize={12} tickLine={false} axisLine={false} domain={['auto', 'auto']} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                    <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} domain={['auto', 'auto']} />
                     <RechartsTooltip 
-                      contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', borderRadius: '12px', color: '#f8fafc' }}
+                      contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '12px', color: '#0f172a', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                       itemStyle={{ color: '#fb7185' }}
                     />
                     <Area type="monotone" dataKey="rhr" stroke="#fb7185" strokeWidth={3} fillOpacity={1} fill="url(#colorRhr)" />
@@ -198,7 +198,7 @@ export default function Analytics() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="font-bold text-foreground text-lg flex items-center gap-2">
+                  <h3 className="font-medium text-foreground text-lg flex items-center gap-2">
                     <Droplet className="h-5 w-5 text-teal-400" /> Fasting Blood Glucose
                   </h3>
                   <p className="text-muted-foreground text-xs mt-1">Measured in mg/dL</p>
@@ -207,12 +207,12 @@ export default function Analytics() {
               <div className="h-[250px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={chartData}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-                    <XAxis dataKey="name" stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#475569" fontSize={12} tickLine={false} axisLine={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                    <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
                     <RechartsTooltip 
-                      cursor={{ fill: '#1e293b' }}
-                      contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', borderRadius: '12px', color: '#f8fafc' }}
+                      cursor={{ fill: '#f1f5f9' }}
+                      contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '12px', color: '#0f172a', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                       itemStyle={{ color: '#2dd4bf' }}
                     />
                     <Bar dataKey="glucose" fill="#2dd4bf" radius={[4, 4, 0, 0]} />

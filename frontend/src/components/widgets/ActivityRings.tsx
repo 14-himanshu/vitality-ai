@@ -39,17 +39,17 @@ export default function ActivityRings({ latest, goals }: { latest: Metric, goals
       <div className="flex justify-between px-2 w-full mt-4">
         <div className="text-center">
           <div className="flex justify-center"><Zap className="h-4 w-4 text-rose-500" /></div>
-          <div className="font-bold text-foreground mt-1">{calories}</div>
+          <div className="font-medium text-foreground mt-1">{calories}</div>
           <div className="text-[10px] text-muted-foreground">/{CALORIE_GOAL} kcal</div>
         </div>
         <div className="text-center">
           <div className="flex justify-center"><Target className="h-4 w-4 text-emerald-500" /></div>
-          <div className="font-bold text-foreground mt-1">{protein}g</div>
+          <div className="font-medium text-foreground mt-1">{protein}g</div>
           <div className="text-[10px] text-muted-foreground">/{PROTEIN_GOAL}g Pro</div>
         </div>
         <div className="text-center">
           <div className="flex justify-center"><ActivityIcon className="h-4 w-4 text-sky-500" /></div>
-          <div className="font-bold text-foreground mt-1">{hrv}</div>
+          <div className="font-medium text-foreground mt-1">{hrv}</div>
           <div className="text-[10px] text-muted-foreground">ms HRV</div>
         </div>
       </div>

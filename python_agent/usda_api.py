@@ -1,6 +1,7 @@
 import requests
+import os
 
-USDA_API_KEY = "M8gQg2tv3MbbdW67dDweOXu2PVGRsyztDRxbeWf5"
+USDA_API_KEY = os.environ.get("USDA_API_KEY", "")
 SEARCH_URL = "https://api.nal.usda.gov/fdc/v1/foods/search"
 
 def search_nutrition(query: str) -> str:
