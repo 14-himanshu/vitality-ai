@@ -15,7 +15,7 @@ def search_nutrition(query: str) -> str:
             "query": query,
             "pageSize": 1
         }
-        response = requests.get(SEARCH_URL, params=params)
+        response = requests.get(SEARCH_URL, params=params, timeout=5.0)
         response.raise_for_status()
         data = response.json()
         

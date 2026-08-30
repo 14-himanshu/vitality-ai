@@ -24,9 +24,14 @@ app.use('/api/integrations', integrationRoutes);
 app.use('/api/goals', goalsRoutes);
 app.use('/api/agent', agentRoutes);
 
+import { errorHandler } from './middleware/errorHandler';
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'MVC Backend is running smoothly!' });
 });
+
+// Global Error Handler should be the last piece of middleware
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Backend server running on http://localhost:${PORT}`);
