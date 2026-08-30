@@ -9,22 +9,26 @@ from usda_api import search_nutrition
 from pubmed_api import search_pubmed
 
 # Setup Groq Client
-client = Groq(api_key=os.environ.get("GROQ_API_KEY", "your-api-key-here"))
+client = Groq(api_key=os.environ.get("GROQ_API_KEY", "your-api-key-here"), timeout=10.0)
 
 # Setup RAG / ChromaDB
-chroma_client = chromadb.Client()
+chroma_client = chromadb.PersistentClient(path="./chroma_db")
 collection = chroma_client.get_or_create_collection(name="clinical_guidelines")
 
-# Seed with some clinical guidelines for RAG
-collection.add(
-    documents=[
-        "Clinical Guideline 1: Do not recommend calorie deficits exceeding 1000 calories below maintenance. High risk of metabolic damage.",
-        "Clinical Guideline 2: For patients with elevated LDL cholesterol (>130 mg/dL), recommend replacing saturated fats with polyunsaturated fats.",
-        "Clinical Guideline 3: Avoid heavy axial loading exercises (like heavy barbell deadlifts) for individuals recovering from acute lower back pain."
-    ],
-    metadatas=[{"source": "medical_journal"}, {"source": "nutrition_db"}, {"source": "pt_protocol"}],
-    ids=["guideline1", "guideline2", "guideline3"]
-)
+try:
+    if collection.count() == 0:
+        # Seed with some clinical guidelines for RAG
+        collection.add(
+            documents=[
+                "Clinical Guideline 1: Do not recommend calorie deficits exceeding 1000 calories below maintenance. High risk of metabolic damage.",
+                "Clinical Guideline 2: For patients with elevated LDL cholesterol (>130 mg/dL), recommend replacing saturated fats with polyunsaturated fats.",
+                "Clinical Guideline 3: Avoid heavy axial loading exercises (like heavy barbell deadlifts) for individuals recovering from acute lower back pain."
+            ],
+            metadatas=[{"source": "medical_journal"}, {"source": "nutrition_db"}, {"source": "pt_protocol"}],
+            ids=["guideline1", "guideline2", "guideline3"]
+        )
+except Exception as e:
+    print(f"Warning: Could not seed ChromaDB (might be due to network timeout): {e}")
 
 # System Instructions to guide the LLM
 SYSTEM_PROMPT = """

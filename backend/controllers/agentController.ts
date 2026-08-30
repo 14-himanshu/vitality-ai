@@ -49,7 +49,8 @@ export const processCommand = async (req: Request, res: Response) => {
       formData.append('imageBase64', imageBase64);
     }
 
-    const agentRes = await fetch('http://localhost:8000/ask', {
+    const agentUrl = process.env.PYTHON_AGENT_URL || 'http://localhost:8000';
+    const agentRes = await fetch(`${agentUrl}/ask`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: formData.toString()

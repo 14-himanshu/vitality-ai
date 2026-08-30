@@ -18,7 +18,7 @@ def search_pubmed(query: str) -> str:
             "retmode": "json",
             "retmax": 2
         }
-        search_res = requests.get(ESEARCH_URL, params=search_params)
+        search_res = requests.get(ESEARCH_URL, params=search_params, timeout=5.0)
         search_res.raise_for_status()
         search_data = search_res.json()
         
